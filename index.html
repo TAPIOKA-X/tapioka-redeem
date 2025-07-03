@@ -5,6 +5,7 @@
 <style>
 body{
  background-image:url("https://tapioka-site.f5.si/img/icon/TWR-Card.png");
+ background-size: cover;
  text-align: center;
  align-items: center;
 }
@@ -40,9 +41,21 @@ button:hover{
 
 <body>
 <h1 class= "Title">Wellcome !</h1>
-<p style= "color:red;">- There are currently no codes available for redeeming. -</p>
-<input type= "text" value= "CODE Here.."> &emsp; <button onclick= "Redeem()">Redeem</button> <br>
+<p id= "RedeemCode" style= "color:red;">- There are currently no codes available for redeeming. -</p>
+<input id= "Code" type= "text" value= "CODE Here.."> &emsp; <button onclick= "Redeem()">Redeem</button> <br>
+<script>
+var InputText = document.getElementById("Code");
+var RedeemCode = document.getElementById("RedeemCode");
+var code = "There are currently no codes available for redeeming.";
 
+function Redeem(){
+if(code === "There are currently no codes available for redeeming."){
+ alert("There are currently no codes available for redeeming.");
+}else(){
+ RedeemCode.innerHTML = code;
+};
+};
+</script>
 </body>
 
 </html>
